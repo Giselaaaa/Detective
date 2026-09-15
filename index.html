@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#000000">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Detective">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DETECTIVE</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Leaflet para Mapas -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
+</head>
+
+<body>
+
+    <!-- ==============================
+         PANTALLA DE INICIO
+    ============================== -->
+
+    <section id="inicio" class="pantalla pantalla-activa">
+
+        <div class="inicio-contenido">
+
+            <div class="logo-detective">
+                DETECTIVE
+            </div>
+
+            <p class="subtitulo">
+                Descubre la verdad.
+            </p>
+
+            <button class="btn-principal" onclick="mostrarPantalla('casos')">
+                COMENZAR
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PANTALLA DE CASOS
+    ============================== -->
+
+    <section id="casos" class="pantalla">
+
+        <div class="pantalla-simple">
+
+            <div class="cabecera-simple">
+                <span class="numero-caso">CASOS</span>
+                <h1>Casos disponibles</h1>
+            </div>
+
+            <div class="tarjeta-caso" onclick="mostrarPantalla('briefing')">
+
+                <div class="caso-numero">
+                    CASO 001
+                </div>
+
+                <h2>¿Hay infidelidad?</h2>
+
+                <p>
+                    El móvil de Marta contiene información que podría cambiar
+                    por completo lo que crees saber.
+                </p>
+
+                <div class="caso-pie">
+                    <span>● DISPONIBLE</span>
+                    <span>→</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         BRIEFING
+    ============================== -->
+
+    <section id="briefing" class="pantalla">
+
+        <div class="briefing-contenido">
+
+            <div class="briefing-etiqueta">
+                CASO 001
+            </div>
+
+            <h1>
+                El móvil de Marta
+            </h1>
+
+            <p>
+                Marta ha dejado su teléfono desbloqueado.
+            </p>
+
+            <p>
+                Tu trabajo es averiguar qué está ocurriendo.
+            </p>
+
+            <p class="briefing-importante">
+                No saques conclusiones demasiado pronto.
+            </p>
+
+            <button class="btn-principal" onclick="abrirTelefono()">
+                ACCEDER AL MÓVIL
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         TELÉFONO
+    ============================== -->
+
+    <section id="telefono" class="pantalla telefono-pantalla">
+
+        <div class="iphone">
+
+            <!-- Dynamic Island -->
+            <div class="dynamic-island"></div>
+
+            <!-- Barra superior -->
+            <div class="status-bar">
+                <span id="horaTelefono">21:41</span>
+
+                <div class="status-icons">
+                    <span>▮▮▮</span>
+                    <span>⌁</span>
+                    <span>▰</span>
+                </div>
+            </div>
+
+
+            <!-- Fondo -->
+            <div class="wallpaper">
+
+                <!-- ==============================
+                     APLICACIONES
+                ============================== -->
+
+            <div class="iphone-app-grid">
+ 
+                <!-- MENSAJES -->
+                <div class="app" onclick="abrirApp('mensajes')">
+                    <img src="iconos/mensajes.png" alt="Mensajes">
+                    <span>Mensajes</span>
+                </div>
+
+                <!-- TELÉFONO -->
+                <div class="app" onclick="abrirApp('telefono')">
+                    <img src="iconos/telefono.png" alt="Teléfono">
+                    <span>Teléfono</span>
+                </div>
+
+                <!-- FOTOS -->
+                <div class="app" onclick="abrirApp('fotos')">
+                    <img src="iconos/fotos.png" alt="Fotos">
+                    <span>Fotos</span>
+                </div>
+
+                <!-- MAIL -->
+                <div class="app" onclick="abrirApp('mail')">
+                    <img src="iconos/mail.png" alt="Mail">
+                    <span>Mail</span>
+                </div>
+
+                <!-- CALENDARIO -->
+                <div class="app" onclick="abrirApp('calendario')">
+                    <img src="iconos/calendario.png" alt="Calendario">
+                    <span>Calendario</span>
+                </div>
+
+                <!-- MAPAS -->
+                <div class="app" onclick="abrirApp('mapas')">
+                    <img src="iconos/mapas.png" alt="Mapas">
+                    <span>Mapas</span>
+                </div>
+
+                <!-- CONTACTOS -->
+                <div class="app" onclick="abrirApp('contactos')">
+                    <img src="iconos/contactos.png" alt="Contactos">
+                    <span>Contactos</span>
+                </div>
+
+                <!-- NOTAS -->
+                <div class="app" onclick="abrirApp('notas')">
+                    <img src="iconos/notas.png" alt="Notas">
+                    <span>Notas</span>
+                </div>
+
+                <!-- INVESTIGACIÓN -->
+                <div class="app" onclick="abrirApp('investigacion')">
+                    <img src="iconos/investigacion.png" alt="Investigación">
+                    <span>Investigación</span>
+                </div>
+
+        </div>
+
+            <!-- ==============================
+                DOCK INFERIOR
+            ============================== -->
+
+            <div class="iphone-dock">
+
+                <!-- TELÉFONO -->
+                <div class="dock-app" onclick="abrirApp('telefono')">
+                    <img src="iconos/telefono.png" alt="Teléfono">
+                </div>
+
+                <!-- MENSAJES -->
+                <div class="dock-app" onclick="abrirApp('mensajes')">
+                    <img src="iconos/mensajes.png" alt="Mensajes">
+                </div>
+
+                <!-- FOTOS -->
+                <div class="dock-app" onclick="abrirApp('fotos')">
+                    <img src="iconos/fotos.png" alt="Fotos">
+                </div>
+
+                <!-- MAIL -->
+                <div class="dock-app" onclick="abrirApp('mail')">
+                    <img src="iconos/mail.png" alt="Mail">
+                </div>
+
+        </div>
+
+            <!-- ==============================
+                 VENTANA DE APP
+            ============================== -->
+
+            <div id="ventanaApp" class="iphone-app-window">
+
+                <div class="app-header">
+
+                    <button
+                        id="botonVolverApp"
+                        class="btn-volver-app"
+                        onclick="volverDentroDeApp()"
+                    >
+                        ‹
+                    </button>
+
+                    <h2 id="tituloApp">
+                        Aplicación
+                    </h2>
+
+                    <button
+                        class="btn-cerrar-app"
+                        onclick="cerrarApp()"
+                    >
+                        ×
+                    </button>
+
+                </div>
+
+                <div id="contenidoApp" class="contenido-app">
+                </div>
+
+            </div>
+
+
+            <!-- Home indicator -->
+            <div class="home-indicator"></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Leaflet -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <script src="script.js"></script>
+
+<script>
+    if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+            navigator.serviceWorker.register("./sw.js")
+                .then(() => {
+                    console.log("Detective: Service Worker registrado");
+                })
+                .catch(error => {
+                    console.error("Error registrando Service Worker:", error);
+                });
+        });
+    }
+</script>
+
+</body>
+</html>
