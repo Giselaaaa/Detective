@@ -8,6 +8,12 @@
     padding: 0;
 }
 
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #080808;
@@ -38,8 +44,13 @@ button {
 #inicio {
     align-items: center;
     justify-content: center;
+
     background:
-        radial-gradient(circle at center, #222 0%, #080808 55%);
+        radial-gradient(
+            circle at center,
+            #222 0%,
+            #080808 55%
+        );
 }
 
 .inicio-contenido {
@@ -54,21 +65,29 @@ button {
 
 .subtitulo {
     margin-top: 15px;
+
     color: #999;
+
     font-size: 18px;
     letter-spacing: 3px;
 }
 
 .btn-principal {
     margin-top: 45px;
+
     border: none;
+
     background: white;
     color: black;
+
     padding: 16px 35px;
+
     border-radius: 10px;
+
     font-size: 15px;
     font-weight: bold;
     letter-spacing: 2px;
+
     transition: .2s;
 }
 
@@ -84,6 +103,7 @@ button {
 #casos {
     align-items: center;
     justify-content: center;
+
     background: #0c0c0c;
 }
 
@@ -97,52 +117,70 @@ button {
 
 .numero-caso {
     color: #777;
+
     letter-spacing: 3px;
     font-size: 13px;
 }
 
 .cabecera-simple h1 {
     margin-top: 8px;
+
     font-size: 40px;
 }
 
 .tarjeta-caso {
     background: #151515;
+
     border: 1px solid #2b2b2b;
+
     padding: 30px;
+
     border-radius: 18px;
+
     cursor: pointer;
+
     transition: .25s;
 }
 
 .tarjeta-caso:hover {
     transform: translateY(-4px);
+
     border-color: #555;
 }
 
 .caso-numero {
     font-size: 12px;
+
     letter-spacing: 3px;
+
     color: #888;
 }
 
 .tarjeta-caso h2 {
     margin-top: 12px;
+
     font-size: 27px;
 }
 
 .tarjeta-caso p {
     margin-top: 15px;
+
     color: #999;
+
     line-height: 1.6;
 }
 
 .caso-pie {
     margin-top: 30px;
+
     display: flex;
+
     justify-content: space-between;
+
     color: #aaa;
+
     font-size: 12px;
+
     letter-spacing: 2px;
 }
 
@@ -154,6 +192,7 @@ button {
 #briefing {
     align-items: center;
     justify-content: center;
+
     background: #090909;
 }
 
@@ -163,79 +202,32 @@ button {
 
 .briefing-etiqueta {
     color: #777;
+
     font-size: 13px;
+
     letter-spacing: 3px;
 }
 
 .briefing-contenido h1 {
     margin: 15px 0 30px;
+
     font-size: 48px;
 }
 
 .briefing-contenido p {
     color: #aaa;
+
     line-height: 1.7;
+
     margin-bottom: 12px;
 }
 
 .briefing-importante {
     color: white !important;
+
     font-weight: bold;
+
     margin-top: 25px;
-}
-
-
-/* ==============================
-   PANTALLA TELÉFONO
-============================== */
-
-.telefono-pantalla {
-    align-items: center;
-    justify-content: center;
-    background: #171717;
-}
-
-/* ==============================
-   IPHONE - PANTALLA COMPLETA
-============================== */
-
-.telefono-pantalla {
-    position: fixed;
-    inset: 0;
-    width: 100vw;
-    height: 100dvh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #000;
-}
-
-.iphone {
-    position: fixed;
-    inset: 0;
-
-    width: 100vw;
-    height: 100dvh;
-
-    min-width: 100vw;
-    min-height: 100dvh;
-
-    max-width: none;
-    max-height: none;
-
-    margin: 0;
-    padding: 0;
-
-    overflow: hidden;
-
-    border-radius: 0;
-    border: none;
-
-    background: #000;
-
-    box-shadow: none;
-
-    transform: none !important;
 }
 
 
@@ -243,14 +235,117 @@ button {
    PANTALLA DEL TELÉFONO
 ============================== */
 
+.telefono-pantalla {
+    width: 100vw;
+    height: 100dvh;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #171717;
+}
+
+
+/* ==============================
+   IPHONE
+   ESCRITORIO
+============================== */
+
+.iphone {
+    position: relative;
+
+    width: 390px;
+    height: 844px;
+
+    max-width: 90vw;
+    max-height: 90vh;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #000;
+
+    border-radius: 45px;
+
+    box-shadow:
+        0 0 0 8px #111,
+        0 25px 70px rgba(0, 0, 0, .7);
+
+    transform: none !important;
+}
+
+
+/* ==============================
+   DYNAMIC ISLAND
+============================== */
+
+.dynamic-island {
+    position: absolute;
+
+    z-index: 50;
+
+    top: 11px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 125px;
+    height: 36px;
+
+    border-radius: 30px;
+
+    background: #000;
+}
+
+
+/* ==============================
+   STATUS BAR
+============================== */
+
+.status-bar {
+    position: absolute;
+
+    z-index: 40;
+
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 55px;
+
+    padding: 16px 22px 0;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+.status-icons {
+    display: flex;
+
+    gap: 7px;
+}
+
+
+/* ==============================
+   WALLPAPER
+============================== */
+
 .wallpaper {
     position: absolute;
+
     inset: 0;
 
     width: 100%;
     height: 100%;
 
-    padding-top: 0;
+    padding-top: 80px;
 
     background:
         radial-gradient(
@@ -274,75 +369,26 @@ button {
 
 
 /* ==============================
-   STATUS BAR
-============================== */
-
-.status-bar {
-    position: absolute;
-    z-index: 40;
-
-    top: env(safe-area-inset-top);
-
-    left: 0;
-    right: 0;
-
-    height: 55px;
-
-    padding: 12px 22px 0;
-
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 13px;
-    font-weight: bold;
-}
-
-
-/* ==============================
-   DYNAMIC ISLAND
-============================== */
-
-.dynamic-island {
-    position: absolute;
-    z-index: 50;
-
-    top: calc(10px + env(safe-area-inset-top));
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 125px;
-    height: 36px;
-
-    border-radius: 30px;
-
-    background: #000;
-}
-
-
-/* ==============================
-   ICONOS
+   ICONOS DE LAS APLICACIONES
 ============================== */
 
 .iphone-app-grid {
     position: absolute;
 
-    top: calc(90px + env(safe-area-inset-top));
+    top: 105px;
 
-    left: 5vw;
-    right: 5vw;
+    left: 20px;
+    right: 20px;
 
     display: grid;
 
     grid-template-columns: repeat(4, 1fr);
 
-    column-gap: 2vw;
-    row-gap: 24px;
+    column-gap: 14px;
+    row-gap: 22px;
 
     z-index: 5;
 }
-
 
 .app {
     display: flex;
@@ -350,6 +396,7 @@ button {
     flex-direction: column;
 
     align-items: center;
+
     justify-content: flex-start;
 
     width: 100%;
@@ -363,27 +410,25 @@ button {
         opacity .15s ease;
 }
 
-
 .app:active {
     transform: scale(.88);
+
     opacity: .7;
 }
 
-
 .app img {
-    width: min(16vw, 70px);
-    height: min(16vw, 70px);
+    width: 62px;
+    height: 62px;
 
     object-fit: cover;
 
-    border-radius: 18%;
+    border-radius: 14px;
 
     display: block;
 
     box-shadow:
         0 3px 8px rgba(0, 0, 0, .35);
 }
-
 
 .app span {
     margin-top: 5px;
@@ -398,7 +443,7 @@ button {
         Arial,
         sans-serif;
 
-    font-size: clamp(10px, 3vw, 13px);
+    font-size: 11px;
 
     font-weight: 400;
 
@@ -406,7 +451,7 @@ button {
 
     text-align: center;
 
-    max-width: 80px;
+    max-width: 75px;
 
     white-space: nowrap;
 
@@ -420,20 +465,18 @@ button {
 
 
 /* ==============================
-   DOCK
+   DOCK INFERIOR
 ============================== */
 
 .iphone-dock {
     position: absolute;
 
-    left: 3vw;
-    right: 3vw;
+    left: 12px;
+    right: 12px;
 
-    bottom: calc(
-        20px + env(safe-area-inset-bottom)
-    );
+    bottom: 28px;
 
-    height: 88px;
+    height: 86px;
 
     display: flex;
 
@@ -441,7 +484,7 @@ button {
 
     justify-content: space-around;
 
-    padding: 0 5px;
+    padding: 0 8px;
 
     background: rgba(255, 255, 255, .18);
 
@@ -454,10 +497,9 @@ button {
     z-index: 10;
 }
 
-
 .dock-app {
-    width: min(16vw, 70px);
-    height: min(16vw, 70px);
+    width: 62px;
+    height: 62px;
 
     display: flex;
 
@@ -467,16 +509,19 @@ button {
     cursor: pointer;
 
     -webkit-tap-highlight-color: transparent;
+
+    transition:
+        transform .15s ease,
+        opacity .15s ease;
 }
 
-
 .dock-app img {
-    width: 100%;
-    height: 100%;
+    width: 62px;
+    height: 62px;
 
     object-fit: cover;
 
-    border-radius: 18%;
+    border-radius: 14px;
 
     display: block;
 
@@ -484,9 +529,9 @@ button {
         0 3px 8px rgba(0, 0, 0, .35);
 }
 
-
 .dock-app:active {
     transform: scale(.85);
+
     opacity: .7;
 }
 
@@ -520,11 +565,10 @@ button {
     visibility: hidden;
 
     transition:
-        transform .28s cubic-bezier(.2,.8,.2,1),
+        transform .28s cubic-bezier(.2, .8, .2, 1),
         opacity .2s ease,
         visibility 0s linear .28s;
 }
-
 
 .iphone-app-window.abierto {
     visibility: visible;
@@ -536,432 +580,7 @@ button {
     pointer-events: auto;
 
     transition:
-        transform .28s cubic-bezier(.2,.8,.2,1),
-        opacity .2s ease;
-}
-
-
-/* ==============================
-   HEADER DE APP
-============================== */
-
-.app-header {
-    position: relative;
-
-    z-index: 30;
-
-    height: calc(
-        70px + env(safe-area-inset-top)
-    );
-
-    padding:
-        calc(25px + env(safe-area-inset-top))
-        18px
-        0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background: #111;
-
-    border-bottom: 1px solid #282828;
-}
-
-
-.app-header h2 {
-    font-size: 17px;
-
-    font-weight: 600;
-}
-
-
-.btn-volver-app,
-.btn-cerrar-app {
-    border: none;
-
-    background: transparent;
-
-    color: white;
-
-    font-size: 30px;
-
-    width: 35px;
-    height: 35px;
-}
-
-
-.btn-cerrar-app {
-    font-size: 28px;
-}
-
-
-/* ==============================
-   CONTENIDO APP
-============================== */
-
-.contenido-app {
-    height: calc(
-        100% - 70px - env(safe-area-inset-top)
-    );
-
-    overflow-y: auto;
-
-    padding-bottom: 50px;
-}
-
-
-.contenido-app::-webkit-scrollbar {
-    display: none;
-}
-
-
-/* ==============================
-   HOME INDICATOR
-============================== */
-
-.home-indicator {
-    position: absolute;
-
-    z-index: 200;
-
-    bottom: calc(
-        8px + env(safe-area-inset-bottom)
-    );
-
-    left: 50%;
-
-    transform: translateX(-50%);
-
-    width: 120px;
-
-    height: 5px;
-
-    border-radius: 5px;
-
-    background: white;
-}
-
-
-/* ==============================
-   ESCRITORIO
-============================== */
-
-@media (min-width: 601px) {
-
-    .iphone {
-        position: relative;
-
-        width: 390px;
-        height: 844px;
-
-        max-width: 90vw;
-        max-height: 90vh;
-
-        border-radius: 45px;
-
-        box-shadow:
-            0 0 0 8px #111,
-            0 25px 70px rgba(0, 0, 0, .7);
-
-        transform: none !important;
-    }
-
-    .telefono-pantalla {
-        position: fixed;
-        inset: 0;
-
-        width: 100vw;
-        height: 100vh;
-
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-}
-
-/* ==============================
-   EN MÓVIL
-============================== */
-
-@media (max-width: 600px) {
-
-    html,
-    body {
-        width: 100%;
-        height: 100%;
-
-        margin: 0;
-        padding: 0;
-
-        overflow: hidden;
-
-        background: #000;
-    }
-
-    .iphone {
-        width: 100vw;
-        height: 100dvh;
-
-        max-width: none;
-        max-height: none;
-
-        border-radius: 0;
-
-        margin: 0;
-
-        box-shadow: none;
-    }
-}
-
-
-/* ==============================
-   DYNAMIC ISLAND
-============================== */
-
-.dynamic-island {
-    position: absolute;
-    z-index: 50;
-    top: 11px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 125px;
-    height: 36px;
-    border-radius: 30px;
-    background: #000;
-}
-
-
-/* ==============================
-   STATUS BAR
-============================== */
-
-.status-bar {
-    position: absolute;
-    z-index: 40;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 55px;
-    padding: 16px 22px 0;
-    display: flex;
-    justify-content: space-between;
-    font-size: 13px;
-    font-weight: bold;
-}
-
-.status-icons {
-    display: flex;
-    gap: 7px;
-}
-
-
-/* ==============================
-   WALLPAPER
-============================== */
-
-.wallpaper {
-    position: absolute;
-    inset: 0;
-    padding-top: 80px;
-
-    background:
-        radial-gradient(circle at 20% 20%, #3d3d3d 0%, transparent 35%),
-        radial-gradient(circle at 80% 70%, #242424 0%, transparent 40%),
-        linear-gradient(145deg, #141414, #292929);
-
-    overflow: hidden;
-}
-
-
-/* ==============================
-   ICONOS DE LAS APLICACIONES
-============================== */
-
-.iphone-app-grid {
-    position: absolute;
-    top: 105px;
-    left: 20px;
-    right: 20px;
-
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 14px;
-    row-gap: 22px;
-
-    z-index: 5;
-}
-
-.app {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-
-    width: 100%;
-
-    cursor: pointer;
-
-    -webkit-tap-highlight-color: transparent;
-
-    transition:
-        transform .15s ease,
-        opacity .15s ease;
-}
-
-.app:active {
-    transform: scale(.88);
-    opacity: .7;
-}
-
-.app img {
-    width: 62px;
-    height: 62px;
-
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    display: block;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, .35);
-}
-
-.app span {
-    margin-top: 5px;
-
-    color: white;
-
-    font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "SF Pro Display",
-        "SF Pro Text",
-        Arial,
-        sans-serif;
-
-    font-size: 11px;
-    font-weight: 400;
-
-    line-height: 14px;
-
-    text-align: center;
-
-    max-width: 75px;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    text-shadow:
-        0 1px 2px rgba(0, 0, 0, .8);
-}
-
-
-/* ==============================
-   DOCK INFERIOR
-============================== */
-
-.iphone-dock {
-    position: absolute;
-
-    left: 12px;
-    right: 12px;
-    bottom: 28px;
-
-    height: 86px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-
-    padding: 0 8px;
-
-    background: rgba(255, 255, 255, .18);
-
-    backdrop-filter: blur(22px);
-    -webkit-backdrop-filter: blur(22px);
-
-    border-radius: 25px;
-
-    z-index: 10;
-}
-
-.dock-app {
-    width: 62px;
-    height: 62px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    cursor: pointer;
-
-    -webkit-tap-highlight-color: transparent;
-
-    transition:
-        transform .15s ease,
-        opacity .15s ease;
-}
-
-.dock-app img {
-    width: 62px;
-    height: 62px;
-
-    object-fit: cover;
-
-    border-radius: 14px;
-
-    display: block;
-
-    box-shadow:
-        0 3px 8px rgba(0, 0, 0, .35);
-}
-
-.dock-app:active {
-    transform: scale(.85);
-    opacity: .7;
-}
-
-
-/* ==============================
-   APP WINDOW
-============================== */
-
-.iphone-app-window {
-    position: absolute;
-    z-index: 20;
-    inset: 0;
-
-    background: #111;
-
-    overflow: hidden;
-
-    opacity: 0;
-    transform: scale(.65);
-
-    transform-origin: center center;
-
-    pointer-events: none;
-    visibility: hidden;
-
-    transition:
-        transform .28s cubic-bezier(.2,.8,.2,1),
-        opacity .2s ease,
-        visibility 0s linear .28s;
-}
-
-.iphone-app-window.abierto {
-    visibility: visible;
-    opacity: 1;
-    transform: scale(1);
-    pointer-events: auto;
-
-    transition:
-        transform .28s cubic-bezier(.2,.8,.2,1),
+        transform .28s cubic-bezier(.2, .8, .2, 1),
         opacity .2s ease;
 }
 
@@ -972,30 +591,40 @@ button {
 
 .app-header {
     position: relative;
+
     z-index: 30;
 
     height: 82px;
+
     padding: 32px 18px 0;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     background: #111;
+
     border-bottom: 1px solid #282828;
 }
 
 .app-header h2 {
     font-size: 17px;
+
     font-weight: 600;
 }
 
 .btn-volver-app,
 .btn-cerrar-app {
     border: none;
+
     background: transparent;
+
     color: white;
+
     font-size: 30px;
+
     width: 35px;
     height: 35px;
 }
@@ -1011,7 +640,9 @@ button {
 
 .contenido-app {
     height: calc(100% - 82px);
+
     overflow-y: auto;
+
     padding-bottom: 50px;
 }
 
@@ -1030,56 +661,75 @@ button {
 
 .investigacion-superior {
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     margin-bottom: 20px;
 }
 
 .investigacion-superior small {
     color: #777;
+
     letter-spacing: 1px;
 }
 
 .progreso {
     font-size: 13px;
+
     color: #aaa;
 }
 
 .pregunta-numero {
     font-size: 12px;
+
     color: #777;
+
     letter-spacing: 2px;
+
     margin-bottom: 12px;
 }
 
 .pregunta-titulo {
     font-size: 25px;
+
     line-height: 1.2;
+
     margin-bottom: 14px;
 }
 
 .pregunta-texto {
     color: #aaa;
+
     font-size: 14px;
+
     line-height: 1.5;
+
     margin-bottom: 24px;
 }
 
 .respuestas {
     display: flex;
+
     flex-direction: column;
+
     gap: 10px;
 }
 
 .respuesta {
     width: 100%;
+
     text-align: left;
 
     border: 1px solid #333;
+
     background: #181818;
+
     color: white;
 
     padding: 16px;
+
     border-radius: 12px;
 
     font-size: 14px;
@@ -1089,47 +739,69 @@ button {
 
 .respuesta:hover {
     background: #222;
+
     border-color: #555;
 }
 
 .respuesta.correcta {
     background: #15351f;
+
     border-color: #2d8d50;
 }
 
 .respuesta.incorrecta {
     background: #3a1717;
+
     border-color: #9c3a3a;
 }
 
 .feedback-pregunta {
     margin-top: 18px;
+
     padding: 15px;
+
     border-radius: 12px;
+
     background: #191919;
+
     color: #aaa;
+
     line-height: 1.5;
+
     font-size: 13px;
 }
 
 .boton-siguiente {
     width: 100%;
+
     margin-top: 15px;
+
     padding: 15px;
+
     border: none;
+
     border-radius: 12px;
+
     background: white;
+
     color: black;
+
     font-weight: bold;
 }
 
 .boton-pista {
     width: 100%;
+
     margin-top: 10px;
+
     padding: 12px;
+
     border: 1px solid #333;
+
     border-radius: 12px;
+
     background: transparent;
+
     color: #aaa;
 }
 
@@ -1144,7 +816,9 @@ button {
 
 .elemento-lista {
     padding: 17px 20px;
+
     border-bottom: 1px solid #252525;
+
     cursor: pointer;
 }
 
@@ -1154,18 +828,23 @@ button {
 
 .elemento-lista strong {
     display: block;
+
     font-size: 15px;
 }
 
 .elemento-lista small {
     display: block;
+
     margin-top: 5px;
+
     color: #777;
 }
 
 .elemento-lista p {
     margin-top: 9px;
+
     color: #aaa;
+
     line-height: 1.5;
 }
 
@@ -1180,27 +859,36 @@ button {
 
 .mensaje-burbuja {
     max-width: 80%;
+
     padding: 10px 13px;
+
     border-radius: 17px;
+
     margin: 8px 15px;
+
     line-height: 1.4;
+
     font-size: 14px;
 }
 
 .mensaje-marta {
     margin-left: auto;
-    background: #287ff0;
     margin-right: 15px;
+
+    background: #287ff0;
 }
 
 .mensaje-otro {
     background: #303030;
+
     margin-right: auto;
 }
 
 .mensaje-hora {
     font-size: 9px;
+
     opacity: .55;
+
     margin-top: 3px;
 }
 
@@ -1211,19 +899,27 @@ button {
 
 .llamada {
     display: flex;
+
     align-items: center;
+
     padding: 18px;
+
     border-bottom: 1px solid #252525;
 }
 
 .llamada-icono {
     width: 38px;
     height: 38px;
+
     border-radius: 50%;
+
     background: #252525;
+
     display: flex;
+
     align-items: center;
     justify-content: center;
+
     margin-right: 13px;
 }
 
@@ -1241,6 +937,7 @@ button {
 
 .llamada-duracion {
     color: #aaa;
+
     font-size: 12px;
 }
 
@@ -1251,22 +948,27 @@ button {
 
 .contacto {
     padding: 18px;
+
     border-bottom: 1px solid #252525;
 }
 
 .contacto-nombre {
     font-weight: bold;
+
     font-size: 16px;
 }
 
 .contacto-numero {
     color: #777;
+
     margin-top: 5px;
 }
 
 .contacto-info {
     color: #aaa;
+
     margin-top: 7px;
+
     font-size: 13px;
 }
 
@@ -1281,29 +983,40 @@ button {
 
 .calendario-titulo {
     text-align: center;
+
     font-size: 19px;
+
     margin-bottom: 20px;
 }
 
 .dias-semana,
 .dias-mes {
     display: grid;
+
     grid-template-columns: repeat(7, 1fr);
+
     gap: 4px;
 }
 
 .dia-semana {
     text-align: center;
+
     color: #666;
+
     font-size: 10px;
+
     padding-bottom: 7px;
 }
 
 .dia {
     min-height: 52px;
+
     border-radius: 7px;
+
     background: #171717;
+
     padding: 6px;
+
     font-size: 11px;
 }
 
@@ -1313,10 +1026,15 @@ button {
 
 .evento {
     margin-top: 6px;
+
     background: #343434;
+
     border-radius: 4px;
+
     padding: 3px;
+
     font-size: 8px;
+
     line-height: 1.2;
 }
 
@@ -1335,71 +1053,104 @@ button {
 
 .fecha-grupo {
     padding: 12px;
+
     font-size: 13px;
+
     color: #aaa;
 }
 
 .grid-fotos {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 3px;
 }
 
 .foto-mini {
     aspect-ratio: 1;
+
     object-fit: cover;
+
     width: 100%;
+
     cursor: pointer;
 }
 
 
-/* Foto completa */
+/* ==============================
+   FOTO COMPLETA
+============================== */
 
 .foto-completa {
     position: absolute;
+
     inset: 0;
+
     background: black;
+
     z-index: 100;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 }
 
 .foto-completa img {
     max-width: 100%;
     max-height: 100%;
+
     object-fit: contain;
 }
 
 .foto-controles {
     position: absolute;
+
     top: 35px;
+
     left: 15px;
     right: 15px;
+
     display: flex;
+
     justify-content: space-between;
+
     z-index: 10;
 }
 
 .foto-controles button {
     border: none;
-    background: rgba(0,0,0,.6);
+
+    background: rgba(0, 0, 0, .6);
+
     color: white;
+
     width: 40px;
     height: 40px;
+
     border-radius: 50%;
+
     font-size: 20px;
 }
 
 
-/* Información foto */
+/* ==============================
+   INFORMACIÓN FOTO
+============================== */
 
 .info-foto {
     position: absolute;
+
     inset: auto 12px 20px;
-    background: rgba(20,20,20,.95);
+
+    background: rgba(20, 20, 20, .95);
+
     border-radius: 18px;
+
     padding: 20px;
+
     z-index: 110;
 }
 
@@ -1409,7 +1160,9 @@ button {
 
 .info-foto p {
     color: #aaa;
+
     margin: 7px 0;
+
     font-size: 13px;
 }
 
@@ -1420,7 +1173,9 @@ button {
 
 .email {
     padding: 19px;
+
     border-bottom: 1px solid #252525;
+
     cursor: pointer;
 }
 
@@ -1430,6 +1185,7 @@ button {
 
 .email-remitente {
     display: flex;
+
     justify-content: space-between;
 }
 
@@ -1439,17 +1195,21 @@ button {
 
 .email-fecha {
     color: #666;
+
     font-size: 11px;
 }
 
 .email-asunto {
     margin-top: 8px;
+
     font-weight: bold;
 }
 
 .email-preview {
     margin-top: 7px;
+
     color: #888;
+
     font-size: 12px;
 }
 
@@ -1459,20 +1219,27 @@ button {
 
 .email-detalle h3 {
     font-size: 21px;
+
     margin-bottom: 20px;
 }
 
 .email-detalle p {
     color: #aaa;
+
     line-height: 1.6;
+
     white-space: pre-line;
 }
 
 .adjunto {
     margin-top: 20px;
+
     padding: 12px;
+
     border-radius: 10px;
+
     background: #1c1c1c;
+
     color: #aaa;
 }
 
@@ -1483,6 +1250,7 @@ button {
 
 .mapa {
     width: 100%;
+
     height: 310px;
 }
 
@@ -1492,7 +1260,9 @@ button {
 
 .ubicacion {
     padding: 17px;
+
     border-bottom: 1px solid #252525;
+
     cursor: pointer;
 }
 
@@ -1506,7 +1276,9 @@ button {
 
 .ubicacion p {
     margin-top: 7px;
+
     color: #aaa;
+
     font-size: 13px;
 }
 
@@ -1517,19 +1289,25 @@ button {
 
 .nota {
     margin: 14px;
+
     background: #171717;
+
     border-radius: 12px;
+
     padding: 18px;
 }
 
 .nota-titulo {
     font-weight: bold;
+
     margin-bottom: 15px;
 }
 
 .nota-texto {
     color: #aaa;
+
     line-height: 1.7;
+
     white-space: pre-line;
 }
 
@@ -1540,63 +1318,29 @@ button {
 
 .home-indicator {
     position: absolute;
+
     z-index: 200;
+
     bottom: 8px;
+
     left: 50%;
+
     transform: translateX(-50%);
+
     width: 120px;
+
     height: 5px;
+
     border-radius: 5px;
+
     background: white;
 }
 
-/* ==============================
-   DISEÑO ADAPTATIVO
-============================== */
 
-/*
-   ORDENADOR
-   Mostramos el teléfono como un iPhone
-   centrado en la pantalla.
-*/
-
-.telefono-pantalla {
-    width: 100vw;
-    height: 100dvh;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #171717;
-}
-
-.iphone {
-    position: relative;
-
-    width: 390px;
-    height: 844px;
-
-    max-width: 100%;
-    max-height: 100%;
-
-    overflow: hidden;
-
-    background: #000;
-
-    border-radius: 45px;
-
-    box-shadow:
-        0 0 0 8px #111,
-        0 25px 70px rgba(0, 0, 0, .7);
-}
-
-
-/*
+/* =========================================================
    MÓVIL
-   El teléfono simulado desaparece como "marco"
-   y pasa a ocupar TODA la pantalla.
-*/
+   EL TELÉFONO OCUPA EL 100% DE LA PANTALLA
+========================================================= */
 
 @media (max-width: 600px) {
 
@@ -1613,6 +1357,7 @@ button {
         background: #000;
     }
 
+
     .pantalla {
         width: 100%;
         height: 100dvh;
@@ -1620,16 +1365,27 @@ button {
         min-height: 100dvh;
     }
 
+
     .telefono-pantalla {
-        width: 100%;
+        position: fixed;
+
+        inset: 0;
+
+        width: 100vw;
         height: 100dvh;
 
+        min-width: 100vw;
         min-height: 100dvh;
 
         display: block;
 
         background: #000;
     }
+
+
+    /* ==============================
+       IPHONE FULLSCREEN
+    ============================== */
 
     .iphone {
         position: fixed;
@@ -1649,31 +1405,73 @@ button {
         margin: 0;
         padding: 0;
 
+        border: none;
+
         border-radius: 0;
 
         box-shadow: none;
 
+        overflow: hidden;
+
         transform: none !important;
     }
 
-    /*
-       El fondo ocupa toda la pantalla
-    */
+
+    /* ==============================
+       WALLPAPER
+    ============================== */
 
     .wallpaper {
+        position: absolute;
+
+        inset: 0;
+
         width: 100%;
         height: 100%;
 
-        min-height: 100%;
+        padding-top: 0;
+
+        overflow: hidden;
     }
 
 
-    /*
+    /* ==============================
+       DYNAMIC ISLAND
+    ============================== */
+
+    .dynamic-island {
+        top: calc(
+            10px + env(safe-area-inset-top)
+        );
+
+        width: 125px;
+
+        height: 36px;
+    }
+
+
+    /* ==============================
+       STATUS BAR
+    ============================== */
+
+    .status-bar {
+        top: env(safe-area-inset-top);
+
+        height: 55px;
+
+        padding:
+            10px 22px 0;
+    }
+
+
+    /* ==============================
        ICONOS
-    */
+    ============================== */
 
     .iphone-app-grid {
-        top: 105px;
+        top: calc(
+            90px + env(safe-area-inset-top)
+        );
 
         left: 5vw;
         right: 5vw;
@@ -1681,32 +1479,44 @@ button {
         grid-template-columns: repeat(4, 1fr);
 
         column-gap: 2vw;
+
         row-gap: 24px;
     }
 
+
     .app img {
         width: min(16vw, 70px);
+
         height: min(16vw, 70px);
 
         border-radius: 18%;
     }
 
+
     .app span {
         margin-top: 5px;
 
-        font-size: clamp(10px, 3vw, 13px);
+        font-size: clamp(
+            10px,
+            3vw,
+            13px
+        );
+
+        max-width: 80px;
     }
 
 
-    /*
+    /* ==============================
        DOCK
-    */
+    ============================== */
 
     .iphone-dock {
         left: 3vw;
         right: 3vw;
 
-        bottom: calc(20px + env(safe-area-inset-bottom));
+        bottom: calc(
+            20px + env(safe-area-inset-bottom)
+        );
 
         height: 88px;
 
@@ -1715,10 +1525,13 @@ button {
         border-radius: 25px;
     }
 
+
     .dock-app {
         width: min(16vw, 70px);
+
         height: min(16vw, 70px);
     }
+
 
     .dock-app img {
         width: 100%;
@@ -1728,43 +1541,15 @@ button {
     }
 
 
-    /*
-       DYNAMIC ISLAND
-    */
-
-    .dynamic-island {
-        top: calc(10px + env(safe-area-inset-top));
-    }
-
-
-    /*
-       BARRA SUPERIOR
-    */
-
-    .status-bar {
-        top: env(safe-area-inset-top);
-
-        padding-top: 10px;
-    }
-
-
-    /*
-       HOME INDICATOR
-    */
-
-    .home-indicator {
-        bottom: calc(8px + env(safe-area-inset-bottom));
-
-        width: 120px;
-        height: 5px;
-    }
-
-
-    /*
-       VENTANA DE LAS APLICACIONES
-    */
+    /* ==============================
+       VENTANA DE APP
+    ============================== */
 
     .iphone-app-window {
+        position: absolute;
+
+        inset: 0;
+
         width: 100%;
         height: 100%;
 
@@ -1772,11 +1557,110 @@ button {
     }
 
 
-    /*
-       HEADER DE LAS APPS
-    */
+    /* ==============================
+       HEADER APP
+    ============================== */
 
     .app-header {
-        padding-top: calc(32px + env(safe-area-inset-top));
+        height: calc(
+            82px + env(safe-area-inset-top)
+        );
+
+        padding:
+            calc(
+                32px + env(safe-area-inset-top)
+            )
+            18px
+            0;
     }
+
+
+    /* ==============================
+       CONTENIDO APP
+    ============================== */
+
+    .contenido-app {
+        height: calc(
+            100% -
+            82px -
+            env(safe-area-inset-top)
+        );
+    }
+
+
+    /* ==============================
+       FOTO COMPLETA
+    ============================== */
+
+    .foto-completa {
+        position: absolute;
+
+        inset: 0;
+
+        width: 100%;
+        height: 100%;
+    }
+
+
+    /* ==============================
+       HOME INDICATOR
+    ============================== */
+
+    .home-indicator {
+        bottom: calc(
+            8px + env(safe-area-inset-bottom)
+        );
+
+        width: 120px;
+
+        height: 5px;
+    }
+
+
+    /* ==============================
+       INICIO
+    ============================== */
+
+    .logo-detective {
+        letter-spacing: 7px;
+    }
+
+}
+
+
+/* =========================================================
+   ESCRITORIO
+========================================================= */
+
+@media (min-width: 601px) {
+
+    .telefono-pantalla {
+        width: 100vw;
+        height: 100vh;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+
+    .iphone {
+        position: relative;
+
+        width: 390px;
+        height: 844px;
+
+        max-width: 90vw;
+        max-height: 90vh;
+
+        border-radius: 45px;
+
+        box-shadow:
+            0 0 0 8px #111,
+            0 25px 70px rgba(0, 0, 0, .7);
+
+        transform: none !important;
+    }
+
 }
