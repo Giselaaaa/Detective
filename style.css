@@ -1087,95 +1087,174 @@ button {
     background: white;
 }
 
-
 /* ==============================
-   RESPONSIVE
+   DISEÑO ADAPTATIVO
 ============================== */
 
-@media (max-height: 850px) {
+/*
+   ORDENADOR
+   Mostramos el teléfono como un iPhone
+   centrado en la pantalla.
+*/
 
-    .iphone {
-        transform: scale(.88);
-    }
+.telefono-pantalla {
+    width: 100vw;
+    height: 100dvh;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #171717;
 }
 
-@media (max-height: 730px) {
+.iphone {
+    position: relative;
 
-    .iphone {
-        transform: scale(.78);
-    }
+    width: 390px;
+    height: 844px;
 
+    max-width: 100%;
+    max-height: 100%;
+
+    overflow: hidden;
+
+    background: #000;
+
+    border-radius: 45px;
+
+    box-shadow:
+        0 0 0 8px #111,
+        0 25px 70px rgba(0, 0, 0, .7);
 }
 
-@media (max-width: 500px) {
 
-    .iphone {
-        width: 100vw;
-        height: 100vh;
-        border-radius: 0;
-        border: none;
-    }
-
-    .logo-detective {
-        letter-spacing: 7px;
-    }
-
-}
-
-/* ==============================
-   ADAPTACIÓN A DIFERENTES MÓVILES
-============================== */
+/*
+   MÓVIL
+   El teléfono simulado desaparece como "marco"
+   y pasa a ocupar TODA la pantalla.
+*/
 
 @media (max-width: 600px) {
 
-    .iphone-screen {
+    html,
+    body {
         width: 100%;
         height: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+
+        background: #000;
     }
 
+    .pantalla {
+        width: 100%;
+        height: 100dvh;
+
+        min-height: 100dvh;
+    }
+
+    .telefono-pantalla {
+        width: 100%;
+        height: 100dvh;
+
+        min-height: 100dvh;
+
+        display: block;
+
+        background: #000;
+    }
+
+    .iphone {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 100vw;
+        height: 100dvh;
+
+        min-width: 100vw;
+        min-height: 100dvh;
+
+        max-width: none;
+        max-height: none;
+
+        margin: 0;
+        padding: 0;
+
+        border-radius: 0;
+
+        box-shadow: none;
+
+        transform: none !important;
+    }
+
+    /*
+       El fondo ocupa toda la pantalla
+    */
+
+    .wallpaper {
+        width: 100%;
+        height: 100%;
+
+        min-height: 100%;
+    }
+
+
+    /*
+       ICONOS
+    */
+
     .iphone-app-grid {
-        top: 12vh;
+        top: 105px;
+
         left: 5vw;
         right: 5vw;
 
-        column-gap: 3vw;
-        row-gap: 3vh;
+        grid-template-columns: repeat(4, 1fr);
+
+        column-gap: 2vw;
+        row-gap: 24px;
     }
 
     .app img {
-        width: 16vw;
-        height: 16vw;
-
-        max-width: 70px;
-        max-height: 70px;
+        width: min(16vw, 70px);
+        height: min(16vw, 70px);
 
         border-radius: 18%;
     }
 
     .app span {
-        font-size: clamp(10px, 2.8vw, 13px);
+        margin-top: 5px;
+
+        font-size: clamp(10px, 3vw, 13px);
     }
+
+
+    /*
+       DOCK
+    */
 
     .iphone-dock {
         left: 3vw;
         right: 3vw;
-        bottom: 3vh;
 
-        height: 10vh;
+        bottom: calc(20px + env(safe-area-inset-bottom));
 
-        min-height: 70px;
-        max-height: 100px;
+        height: 88px;
+
+        padding: 0 5px;
 
         border-radius: 25px;
     }
 
     .dock-app {
-        width: 16vw;
-        height: 16vw;
-
-        max-width: 70px;
-        max-height: 70px;
+        width: min(16vw, 70px);
+        height: min(16vw, 70px);
     }
 
     .dock-app img {
@@ -1183,5 +1262,58 @@ button {
         height: 100%;
 
         border-radius: 18%;
+    }
+
+
+    /*
+       DYNAMIC ISLAND
+    */
+
+    .dynamic-island {
+        top: calc(10px + env(safe-area-inset-top));
+    }
+
+
+    /*
+       BARRA SUPERIOR
+    */
+
+    .status-bar {
+        top: env(safe-area-inset-top);
+
+        padding-top: 10px;
+    }
+
+
+    /*
+       HOME INDICATOR
+    */
+
+    .home-indicator {
+        bottom: calc(8px + env(safe-area-inset-bottom));
+
+        width: 120px;
+        height: 5px;
+    }
+
+
+    /*
+       VENTANA DE LAS APLICACIONES
+    */
+
+    .iphone-app-window {
+        width: 100%;
+        height: 100%;
+
+        border-radius: 0;
+    }
+
+
+    /*
+       HEADER DE LAS APPS
+    */
+
+    .app-header {
+        padding-top: calc(32px + env(safe-area-inset-top));
     }
 }
